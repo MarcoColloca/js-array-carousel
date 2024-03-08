@@ -32,7 +32,12 @@ itemsContainerDOMElement.innerHTML = itemsHTML
 
 
 const divItemList = document.getElementsByClassName('item')
-console.log(divItemList)
+//console.log(divItemList)
 
-const firstItem = divItemList[0];
-firstItem.classList.add('active')
+let activeItemIndex = 0;
+
+
+divItemList[activeItemIndex].classList.add('active')
+
+
+
