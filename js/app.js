@@ -80,10 +80,8 @@ const nextDOMElement = document.querySelector('.prev')
 //// EventListener (Click) che permette di navigare all'interno del Carousel
 nextDOMElement.addEventListener('click', function(){
 
-    
-
     //// Condizione SE che permette di avanzare nel Carousel se la posizione dell'oggetto attivo è inferiore rispetto alla lunghezza del carousel -1
-    if(activeItemIndex < (divItemList.length - 1) && (activeItemIndex < (divPreviewItemList.length - 1))){
+    if(activeItemIndex < (divItemList.length - 1) && activeItemIndex < (divPreviewItemList.length - 1)){
 
         divItemList[activeItemIndex].classList.remove('active');
         divPreviewItemList[activeItemIndex].classList.remove('active');
