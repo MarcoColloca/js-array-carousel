@@ -77,6 +77,8 @@ divPreviewItemList[activeItemIndex].classList.add('active')
 const nextDOMElement = document.querySelector('.prev')
 
 
+
+
 //// EventListener (Click) che permette di navigare all'interno del Carousel
 nextDOMElement.addEventListener('click', function(){
 
@@ -87,7 +89,7 @@ nextDOMElement.addEventListener('click', function(){
     activeItemIndex++;
 
 
-    //// Condizione SE che permette di avanzare nel Carousel se la posizione dell'oggetto attivo è inferiore rispetto alla lunghezza del carousel -1
+    //// Condizione SE che permette di tornare alla prima immagine nel caso ci troviamo sull'ultima immagine
     if(activeItemIndex === divItemList.length){
  
         activeItemIndex = 0;
@@ -129,5 +131,34 @@ prevDOMElement.addEventListener('click', function(){
 
 
 })
+
+
+////// CODICE RIPULITO////////////
+// //// EventListener (Click) che permette di navigare all'interno del Carousel
+// prevDOMElement.addEventListener('click', function(){
+
+//     divItemList[activeItemIndex].classList.remove('active');
+//     divPreviewItemList[activeItemIndex].classList.remove('active');
+
+//     activeItemIndex--;
+
+//     //// Condizione SE che permette di tornare all'ultima
+//     if(activeItemIndex < 0){
+        
+//         activeItemIndex = divItemList.length - 1;
+         
+//     }
+
+
+//     divItemList[activeItemIndex].classList.add('active')
+//     divPreviewItemList[activeItemIndex].classList.add('active')
+
+// })
+
+
+
+
+
+
 
 // DRY -> don't repeat yourself
