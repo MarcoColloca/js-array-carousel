@@ -55,3 +55,14 @@ nextDOMElement.addEventListener('click', function(){
 
 
 
+const prevDOMElement = document.querySelector('.prev')
+
+prevDOMElement.addEventListener('click', function(){
+
+    divItemList[activeItemIndex].classList.remove('active');
+
+    activeItemIndex--;
+
+    divItemList[activeItemIndex].classList.add('active')
+
+})
