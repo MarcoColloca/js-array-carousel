@@ -40,4 +40,18 @@ let activeItemIndex = 0;
 divItemList[activeItemIndex].classList.add('active')
 
 
+const nextDOMElement = document.querySelector('.next')
+
+
+nextDOMElement.addEventListener('click', function(){
+
+    divItemList[activeItemIndex].classList.remove('active');
+
+    activeItemIndex++;
+
+    divItemList[activeItemIndex].classList.add('active')
+
+})
+
+
 
