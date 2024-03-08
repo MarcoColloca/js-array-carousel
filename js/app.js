@@ -29,3 +29,10 @@ for (let i = 0; i < imagesArray.length; i++) {
 }
 
 itemsContainerDOMElement.innerHTML = itemsHTML
+
+
+const divItemList = document.getElementsByClassName('item')
+console.log(divItemList)
+
+const firstItem = divItemList[0];
+firstItem.classList.add('active')
