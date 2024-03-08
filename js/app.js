@@ -42,14 +42,26 @@ divItemList[activeItemIndex].classList.add('active')
 
 const nextDOMElement = document.querySelector('.next')
 
+console.log(divItemList.length)
+console.log(divItemList[activeItemIndex])
 
 nextDOMElement.addEventListener('click', function(){
 
-    divItemList[activeItemIndex].classList.remove('active');
+    
+    if(activeItemIndex < (divItemList.length - 1)){
+        divItemList[activeItemIndex].classList.remove('active');
 
-    activeItemIndex++;
+        activeItemIndex++;
 
-    divItemList[activeItemIndex].classList.add('active')
+        divItemList[activeItemIndex].classList.add('active')
+    }else{
+
+        divItemList[activeItemIndex].classList.remove('active');
+
+        activeItemIndex-=(divItemList.length - 1);
+
+        divItemList[activeItemIndex].classList.add('active')
+    }
 
 })
 
@@ -59,10 +71,20 @@ const prevDOMElement = document.querySelector('.prev')
 
 prevDOMElement.addEventListener('click', function(){
 
-    divItemList[activeItemIndex].classList.remove('active');
+    if(activeItemIndex > 0){
+        divItemList[activeItemIndex].classList.remove('active');
 
-    activeItemIndex--;
+        activeItemIndex--;
+    
+        divItemList[activeItemIndex].classList.add('active')
+    }else{
 
-    divItemList[activeItemIndex].classList.add('active')
+        divItemList[activeItemIndex].classList.remove('active');
+
+        activeItemIndex+=(divItemList.length - 1);
+
+        divItemList[activeItemIndex].classList.add('active')
+    }
+
 
 })
