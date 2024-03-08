@@ -80,27 +80,22 @@ const nextDOMElement = document.querySelector('.prev')
 //// EventListener (Click) che permette di navigare all'interno del Carousel
 nextDOMElement.addEventListener('click', function(){
 
+
+    divItemList[activeItemIndex].classList.remove('active');
+    divPreviewItemList[activeItemIndex].classList.remove('active');
+
+    activeItemIndex++;
+
+
     //// Condizione SE che permette di avanzare nel Carousel se la posizione dell'oggetto attivo è inferiore rispetto alla lunghezza del carousel -1
-    if(activeItemIndex < (divItemList.length - 1) && activeItemIndex < (divPreviewItemList.length - 1)){
+    if(activeItemIndex === divItemList.length){
+ 
+        activeItemIndex = 0;
 
-        divItemList[activeItemIndex].classList.remove('active');
-        divPreviewItemList[activeItemIndex].classList.remove('active');
-
-        activeItemIndex++;
-
-        divItemList[activeItemIndex].classList.add('active')
-        divPreviewItemList[activeItemIndex].classList.add('active')
-    //// ALTRIMENTI che permette di ritornare al primo elemento nel caso la posizione dell'elemento attivo sia uguale alla lunghezza del carousel -1
-    }else{
-
-        divItemList[activeItemIndex].classList.remove('active');
-        divPreviewItemList[activeItemIndex].classList.remove('active');
-
-        activeItemIndex-=(divItemList.length - 1);
-
-        divItemList[activeItemIndex].classList.add('active')
-        divPreviewItemList[activeItemIndex].classList.add('active')
     }
+
+    divItemList[activeItemIndex].classList.add('active')
+    divPreviewItemList[activeItemIndex].classList.add('active')
 
 })
 
@@ -126,7 +121,7 @@ prevDOMElement.addEventListener('click', function(){
         divItemList[activeItemIndex].classList.remove('active');
         divPreviewItemList[activeItemIndex].classList.remove('active');
 
-        activeItemIndex+=(divItemList.length - 1);
+        activeItemIndex = divItemList.length - 1;
 
         divItemList[activeItemIndex].classList.add('active')
         divPreviewItemList[activeItemIndex].classList.add('active')
@@ -134,3 +129,5 @@ prevDOMElement.addEventListener('click', function(){
 
 
 })
+
+// DRY -> don't repeat yourself
