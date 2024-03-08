@@ -67,6 +67,10 @@ body{
     
 }
 
+.preview.active img:hover{
+    border: 0.1px red solid;
+    cursor: pointer;
+}
 
 .item{
     display: none;
